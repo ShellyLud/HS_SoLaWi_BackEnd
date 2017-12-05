@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.1" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
+	<persistence-unit name="HS_SoLaWi_BackEnd" transaction-type="JTA">
+	<!-- das ist die Eingabe fuer den Wildfly - brauchen wir die auch auf dem Server?? -->
+		<jta-data-source>java:/jdbc/hs_solawi_backend</jta-data-source>
+		<!-- hier auch die frage, ob mySQL mit jdbc arbeitet?? -->
+		<!--<jta-data-source>java:/HS_SoLaWi_BackEnd</jta-data-source>-->
+		<!-- <class>de.awk.model.Kunde</class> -> Beispiel -->
+		<class>model.Gaertner</class>
+		<class>model.Gruppe</class>
+		<class>model.Mitglied</class>
+		<class>model.Problemveranstaltung</class>
+		<properties>
+			<!--  <property name="javax.persistence.schema-generation.create-database-schemas" value="true"/> -->
+			<property name="hibernate.hbm2ddl.auto" value="update"/>
+			<!--  property?? -->
+		</properties>
+	</persistence-unit>
+</persistence>
